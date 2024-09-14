@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .profile img {
+            border-radius: 50%;
+            border: 5px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .profile-details {
+            margin-left: 20px;
+        }
+        .profile-details h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #333;
+        }
+        .profile-details p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #555;
+        }
+        .profile-details h2 {
+            margin-top: 20px;
+            font-size: 22px;
+            color: #222;
+        }
+        .address, .contact {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .address p, .contact p {
+            margin: 5px 0;
+        }
+        .address p:last-child, .contact p:last-child {
+            margin-bottom: 0;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background: #eee;
+            border-top: 1px solid #ddd;
+            margin-top: 20px;
+            border-radius: 0 0 8px 8px;
+        }
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <img src="<%= random.results[0].picture.large %>" alt="Profile Picture" width="150" height="150">
+            <div class="profile-details">
+                <h1><%= random.results[0].name.title %> <%= random.results[0].name.first %> <%= random.results[0].name.last %></h1>
+                <p><strong>Gender:</strong> <%= random.results[0].gender %></p>
+                <p><strong>Date of Birth:</strong> <%= new Date(random.results[0].dob.date).toDateString() %> (Age: <%= random.results[0].dob.age %>)</p>
+                <p><strong>Registered Since:</strong> <%= new Date(random.results[0].registered.date).toDateString() %> (Age: <%= random.results[0].registered.age %>)</p>
+                <div class="address">
+                    <h2>Address</h2>
+                    <p><strong>Street:</strong> <%= random.results[0].location.street.number %> <%= random.results[0].location.street.name %></p>
+                    <p><strong>City:</strong> <%= random.results[0].location.city %></p>
+                    <p><strong>State:</strong> <%= random.results[0].location.state %></p>
+                    <p><strong>Country:</strong> <%= random.results[0].location.country %></p>
+                    <p><strong>Postcode:</strong> <%= random.results[0].location.postcode %></p>
+                </div>
+                <div class="contact">
+                    <h2>Contact</h2>
+                    <p><strong>Email:</strong> <%= random.results[0].email %></p>
+                    <p><strong>Phone:</strong> <%= random.results[0].phone %></p>
+                    <p><strong>Cell:</strong> <%= random.results[0].cell %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

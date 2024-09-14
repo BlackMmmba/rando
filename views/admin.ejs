@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin:0px;
+
+        }
+        ul{
+            text-decoration: none ;
+        }
+    </style>
+</head>
+<body>
+        <% user.forEach(element => { %>
+              <li>
+                <ul>
+                    UserName : <%=element.userName %>
+                    Email:<%= element.email %>
+                    
+                </ul>
+              </li>
+        <% }) %>
+</body>
+</html>
